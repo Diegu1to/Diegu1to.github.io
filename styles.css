@@ -176,6 +176,7 @@ input:checked + label {
     color: #3B3486;
     font-family: 'Poppins', sans-serif;
     margin: 5px 0;
+    user-select: none;
 }
 
 

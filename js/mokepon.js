@@ -73,20 +73,20 @@ mapa.height = alturaQueBuscamos
   
 
 class Mokepon {
-    constructor(nombre, foto, vida, fotoMapa,) {
+    constructor(nombre, foto, vida, fotoMapa, x = 10, y = 10)  {
         this.nombre = nombre
         this.foto = foto
         this.vida = vida
         this.ataques =  []
         this.ancho = 40
         this.alto = 40
-        this.x = aleatorio(0, mapa.width - this.ancho)
-        this.y = aleatorio(0, mapa.height - this.alto)
+        this.x = x
+        this.y = y
         this.mapaFoto = new Image()
         this.mapaFoto.src = fotoMapa 
         this.velocidadx = 0
         this.velocidady = 0
-    }
+    } 
 
     pintarMokepon() {
         lienzo.drawImage(
@@ -111,17 +111,17 @@ let tucapalma = new Mokepon("Tucapalma", "./assets/mokepons_mokepon_tucapalma_at
 
 let pydos = new Mokepon("Pydos", "./assets/mokepons_mokepon_pydos_attack.png", 5, "./assets/pydos.png")
 
-let hipodogeEnemigo = new Mokepon("Hipodoge", "./assets/mokepons_mokepon_hipodoge_attack.webp", 5, "./assets/hipodoge.png")
+let hipodogeEnemigo = new Mokepon("Hipodoge", "./assets/mokepons_mokepon_hipodoge_attack.webp", 5, "./assets/hipodoge.png", 60, 156)
 
-let capipepoEnemigo = new Mokepon("Capipepo", "./assets/mokepons_mokepon_capipepo_attack.webp", 5, "./assets/capipepo.webp")
+let capipepoEnemigo = new Mokepon("Capipepo", "./assets/mokepons_mokepon_capipepo_attack.webp", 5, "./assets/capipepo.webp", 197, 10)
 
-let ratigueyaEnemigo = new Mokepon("Ratigueya", "./assets/mokepons_mokepon_ratigueya_attack.webp", 5, "./assets/ratigueya.png")
+let ratigueyaEnemigo = new Mokepon("Ratigueya", "./assets/mokepons_mokepon_ratigueya_attack.webp", 5, "./assets/ratigueya.png", 292, 160)
 
-let langostelvisEnemigo = new Mokepon("Langostelvis", "./assets/mokepons_mokepon_langostelvis_attack.png", 5, "./assets/langostelvis.png")
+let langostelvisEnemigo = new Mokepon("Langostelvis", "./assets/mokepons_mokepon_langostelvis_attack.png", 5, "./assets/langostelvis.png", 290, 60)
 
-let tucapalmaEnemigo = new Mokepon("Tucapalma", "./assets/mokepons_mokepon_tucapalma_attack.png", 5, "./assets/tucapalma.png")
+let tucapalmaEnemigo = new Mokepon("Tucapalma", "./assets/mokepons_mokepon_tucapalma_attack.png", 5, "./assets/tucapalma.png", 96, 65)
 
-let pydosEnemigo = new Mokepon("Pydos", "./assets/mokepons_mokepon_pydos_attack.png", 5, "./assets/pydos.png")
+let pydosEnemigo = new Mokepon("Pydos", "./assets/mokepons_mokepon_pydos_attack.png", 5, "./assets/pydos.png", 200, 150)
 
 
 hipodoge.ataques.push (
@@ -223,13 +223,11 @@ pydosEnemigo.ataques.push (
 mokepones.push(hipodoge,capipepo,ratigueya,langostelvis,tucapalma,pydos)
 
 
-
-
 function iniciarJuego(){
 
     sectionseleccionarAtaque.style.display = "none"
     sectionReiniciar.style.display = "none"
-    sectionVerMapa.style.display = "none"
+    sectionVerMapa.style.display = "none"   
 
 
     mokepones.forEach((mokepon) => {
@@ -257,8 +255,8 @@ function iniciarJuego(){
 
 }
 
-
-function seleccionarMascotaJugador() {       
+function seleccionarMascotaJugador() {     
+        
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = inputHipodoge.id
         mascotaJugador = inputHipodoge.id
@@ -281,7 +279,7 @@ function seleccionarMascotaJugador() {
         alert("SELECCIONA UNA MASCOTA")
         return
     } 
-    
+
     sectionseleccionarMascota.style.display = "none"
 
 
@@ -289,7 +287,6 @@ function seleccionarMascotaJugador() {
     sectionVerMapa.style.display = "flex"
     iniciarMapa()
 }
-
 
 function extraerAtaques(mascotaJugador) {
     let ataques 
@@ -348,13 +345,12 @@ function seleccionarMascotaEnemigo(enemigo) {
 
     let mascotaAleatoria = aleatorio(0, mokepones.length -1)
 
-    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
+    spanMascotaEnemigo.innerHTML = enemigo.nombre
     ataquesMokeponEnemigo = enemigo.ataques
     secuenciaAtaque()  
     console.log(ataqueEnemigo)
     console.log(ataquesMokeponEnemigo)
 }
-
 
 function ataqueAleatorioEnemigo() {
     console.log("Ataque enemigo", ataquesMokeponEnemigo)
@@ -367,7 +363,6 @@ function ataqueAleatorioEnemigo() {
     console.log(ataqueEnemigo);
     iniciarPelea()
 }         
-  
 
 function iniciarPelea() {
     if (ataqueJugador.length === 5) {
@@ -481,7 +476,6 @@ function pintarCanvas() {
     }
 }
 
-
 function moverArriba() {
     mascotaJugadorObjeto.velocidady = - 5
 }
@@ -523,6 +517,7 @@ function sePresionoUnaTecla(event) {
 }
 
 function iniciarMapa() {
+
     
     mascotaJugadorObjeto = obtenerObjetosMascota(mascotaJugador)
     console.log(mascotaJugadorObjeto, mascotaJugador)
@@ -563,9 +558,7 @@ function revisarColision(enemigo) {
 
     detenerMovimiento()
     clearInterval(intervalo)
-    console.log("se detecto una colision");
-
-
+    console.log("se detecto una colision"); 
     sectionseleccionarAtaque.style.display = "flex"
     sectionVerMapa.style.display = "none"
     seleccionarMascotaEnemigo(enemigo)

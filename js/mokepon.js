@@ -291,12 +291,7 @@ function iniciarJuego(){
    botonContinuar.addEventListener("click", continuarJuego)
 
    botonIniciar.addEventListener("click", empezar)
-
-  
-
-
-
-     
+    
 
 }
 
@@ -457,9 +452,9 @@ function revisarVidas(){
     if (victoriasJugador === victoriasEnemigo) {
         crearMensajeFinal("Esto fue un Empate")
     } else if (victoriasJugador > victoriasEnemigo){
-        crearMensajeFinal("FELICITACIONES! ganaste")
+        crearMensajeFinal("FELICITACIONES! Ganaste")
     } else {
-        crearMensajeFinal("Lo siento, perdiste")
+        crearMensajeFinal("Lo siento, Perdiste")
     }
 }
 

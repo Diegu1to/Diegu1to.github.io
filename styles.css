@@ -259,6 +259,10 @@ input:checked + label {
     align-items: center;
 }
 
+.botones-final {
+    display: grid;
+}
+
 #ver-mapa {
     flex-direction: column;
     align-items: center;

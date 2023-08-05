@@ -2,11 +2,97 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@300&family=Sigmar&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #F0FF42;
+}
+
+.sonido {
+    display: flex;
+}
+
+.botones-play {
+    background: transparent;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    margin: 5px;
+    justify-items: center; 
+    padding: 0px;
+    border-color: transparent;
+    border-radius: 37px
+    
+}
+
+#playbtn, #pausebtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 35px;
+    background: black;
+    border: solid;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 15px;
+    border-color: lightgray
+}
+
+
+.titulo-1 {
+    color: #EA047E;
+    font-size: 30px;
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+
+.subtitulo-1 {
+    color: #EA047E;
+    font-size: 24px;
+}
+
+.subtitulo-portada {
+    color: black;
+    font-size: 19px;
+}
+
+.subtitulo-portada1 {
+    color: black;
+    font-size: 19px;
+    background: #FEF9EF;
+}
+
+#boton-iniciar {
+    width: 86px;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #EA047E;
+    color: #EA047E;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10px;
+}
+
+#portada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-portada {
+    background: transparent;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 10px;
+    justify-items: center; 
+    padding: 0px;
+    border-color: transparent;
+    border-radius: 20px   
+
 }
 
 #Seleccionar-mascota {
@@ -26,6 +112,7 @@ body {
     color: #EA047E;
     font-size: 24px;
 }
+
 
 .tarjetas, .tarjetas-ataque {
     display: flex;
@@ -116,6 +203,17 @@ input:checked + label {
     align-items: center;
     flex-direction: column;
     font-family: 'Rubik Wet Paint', cursive;
+}
+
+#boton-continuar {
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    background: #810000;
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
 }
 
 #boton-reiniciar {

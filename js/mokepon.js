@@ -1,8 +1,15 @@
 const sectionseleccionarAtaque = document.getElementById("Seleccionar-ataque")
 const sectionReiniciar = document.getElementById("reiniciar")
+const sectionContinuar = document.getElementById("continuar")
 const botonMascotaJugador = document.getElementById("boton-mascota")
+const botonIniciar = document.getElementById("boton-iniciar")
+const botonContinuar = document.getElementById("boton-continuar")
 const botonReiniciar = document.getElementById("boton-reiniciar") 
+const botonMover = document.getElementById("botones-mover")
+const playbtn = document.getElementById("playbtn")
+const pausebtn = document.getElementById("pausebtn")
 
+const sectionPortada = document.getElementById("portada")
 const sectionseleccionarMascota = document.getElementById("Seleccionar-mascota")
 const spanMascotaJugador = document.getElementById("mascota-jugador")
 
@@ -71,6 +78,17 @@ if (anchoDelMapa > anchoMaximoDelMapa) {
 mapa.width = anchoDelMapa
 mapa.height = alturaQueBuscamos
   
+let sonido = new Audio("./assets/Peggy Gou  It Goes Like Nanana.mp3")
+
+    playbtn.addEventListener("click", ()=>{
+        sonido.play()
+    })
+
+    pausebtn.addEventListener("click", ()=>{
+        sonido.pause()
+    })
+
+
 
 class Mokepon {
     constructor(nombre, foto, vida, fotoMapa, x = 10, y = 10)  {
@@ -222,13 +240,28 @@ pydosEnemigo.ataques.push (
 
 mokepones.push(hipodoge,capipepo,ratigueya,langostelvis,tucapalma,pydos)
 
+function portada() {
+
+
+
+    sectionPortada.style.display = "flex"
+    sectionseleccionarMascota.style.display = "none"
+
+  
+    
+    
+}
 
 function iniciarJuego(){
 
+    portada()
+   
     sectionseleccionarAtaque.style.display = "none"
     sectionReiniciar.style.display = "none"
-    sectionVerMapa.style.display = "none"   
-
+    sectionVerMapa.style.display = "none" 
+    sectionContinuar.style.display = "none"  
+ 
+    
 
     mokepones.forEach((mokepon) => {
         opcionDeMokepones = `
@@ -249,9 +282,21 @@ function iniciarJuego(){
 
     })
 
+    
+
    botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
 
    botonReiniciar.addEventListener("click", reiniciarJuego)
+
+   botonContinuar.addEventListener("click", continuarJuego)
+
+   botonIniciar.addEventListener("click", empezar)
+
+  
+
+
+
+     
 
 }
 
@@ -434,8 +479,36 @@ function crearMensajeFinal(resultadoFinal){
     
     sectionMensajes.innerHTML = resultadoFinal
 
+    sectionContinuar.style.display = "block" 
     sectionReiniciar.style.display = "block"
+    
+}
 
+function empezar() {
+
+    sectionPortada.style.display = "none"
+    sectionseleccionarMascota.style.display = "flex"
+
+}
+
+function continuarJuego() {
+
+    sectionseleccionarAtaque.style.display = "none"
+    sectionVerMapa.style.display = "flex"
+    
+
+    moverArriba()
+    moverAbajo()
+    moverDerecha()
+    moverIzquierda()
+    detenerMovimiento()
+
+
+    window.addEventListener("keydown", sePresionoUnaTecla)
+
+    window.addEventListener("keyup", detenerMovimiento)
+    
+    console.log("hola")
 }
 
 function reiniciarJuego() {
@@ -518,7 +591,6 @@ function sePresionoUnaTecla(event) {
 
 function iniciarMapa() {
 
-    
     mascotaJugadorObjeto = obtenerObjetosMascota(mascotaJugador)
     console.log(mascotaJugadorObjeto, mascotaJugador)
     intervalo = setInterval(pintarCanvas, 50)

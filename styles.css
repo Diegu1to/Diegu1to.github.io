@@ -7,7 +7,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #F0FF42;
+    background-color: #512B81;
+}
+
+.mute {
+    background-color: black;
 }
 
 .sonido {
@@ -15,12 +19,12 @@ body {
 }
 
 .botones-play {
-    background: transparent;
+    background-color:#9F91CC;
     display: flex;
     text-align: center;
     justify-content: flex-end;
     box-sizing: border-box;
-    margin: 5px;
+    margin: 0px;
     justify-items: center; 
     padding: 0px;
     border-color: transparent;
@@ -29,9 +33,9 @@ body {
 }
 
 #playbtn, #pausebtn {
-    width: 40px;
+    width: 57px;
     height: 40px;
-    border-radius: 35px;
+    border-radius: 30px;
     background: black;
     border: solid;
     color: white;
@@ -54,14 +58,14 @@ body {
 }
 
 .subtitulo-portada {
-    color: black;
+    color: #8BE8E5;
     font-size: 19px;
 }
 
 .subtitulo-portada1 {
     color: black;
     font-size: 19px;
-    background: #FEF9EF;
+    background: #9F91CC;
 }
 
 #boton-iniciar {
@@ -259,9 +263,6 @@ input:checked + label {
     align-items: center;
 }
 
-.botones-final {
-    display: grid;
-}
 
 #ver-mapa {
     flex-direction: column;
@@ -274,8 +275,8 @@ input:checked + label {
     height: 40px;
     border-radius: 20px;
     background: transparent;
-    border: 2px solid #3B3486;
-    color: #3B3486;
+    border: 2px solid #FFC6AC;
+    color: #FFC6AC;
     font-family: 'Poppins', sans-serif;
     margin: 5px 0;
     user-select: none;

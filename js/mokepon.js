@@ -83,10 +83,17 @@ let sonido = new Audio("./assets/Peggy Gou  It Goes Like Nanana.mp3")
     playbtn.addEventListener("click", ()=>{
         sonido.play()
     })
+    
 
     pausebtn.addEventListener("click", ()=>{
         sonido.pause()
     })
+let sonidoAgua = new Audio("./assets/sfx-water42.mp3")
+let sonidoFuego = new Audio("./assets/sfx-paperflip4.mp3")
+let sonidoTierra = new Audio("./assets/sfx-office-stapler.mp3")
+
+
+
 
 
 
@@ -362,16 +369,19 @@ function secuenciaAtaque() {
                     console.log(ataqueJugador)
                     boton.style.background = "#82CD47"
                     boton.disabled = true
+                    botonFuego.onemousedown = sonidoFuego.play()
                 } else if (e.target.textContent === " 💦 " ) {
                     ataqueJugador.push("AGUA")
                     console.log(ataqueJugador)
                     boton.style.background = "#82CD47"
                     boton.disabled = true
+                    botonAgua.onemousedown = sonidoAgua.play() 
                 } else {
                     ataqueJugador.push("TIERRA")
                     console.log(ataqueJugador)
                     boton.style.background = "#82CD47"
                     boton.disabled = true
+                    botonTierra.onemousedown = sonidoTierra.play()
                 } 
                 if (ataqueJugador.length === 5) { 
                 } 

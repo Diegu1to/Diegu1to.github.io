@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #512B81;
+    background-color: #F0FF42;
 }
 
 .mute {
@@ -19,7 +19,7 @@ body {
 }
 
 .botones-play {
-    background-color:#9F91CC;
+    background-color:#54B435;
     display: flex;
     text-align: center;
     justify-content: flex-end;
@@ -29,10 +29,10 @@ body {
     padding: 0px;
     border-color: transparent;
     border-radius: 37px
-    
 }
 
 #playbtn, #pausebtn {
+    cursor: pointer;   
     width: 57px;
     height: 40px;
     border-radius: 30px;
@@ -58,17 +58,49 @@ body {
 }
 
 .subtitulo-portada {
-    color: #8BE8E5;
+    color: #54B435;
     font-size: 19px;
 }
 
 .subtitulo-portada1 {
     color: black;
     font-size: 19px;
-    background: #9F91CC;
+    background: #54B435;
 }
 
 #boton-iniciar {
+  border: 0;
+  background-image: linear-gradient(
+    150deg,
+    #9500ff,
+    #EA047E,
+    #00DDFF
+  );
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 0px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btinicio-texto {
+    background-color: #111;
+    padding: 11px 20px;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+#boton-iniciar:hover .btinicio-texto {
+    background: none;
+}
+
+#boton-iniciar:active {
+    transform: scale(0.9);
+}
+
+#botoon-iniciar {
+    cursor: pointer;
     width: 86px;
     height: 40px;
     border-radius: 20px;
@@ -124,6 +156,7 @@ body {
 }
 
 .tarjeta-de-mokepon {
+    cursor: pointer;
     width: 183px;
     height: 95px;
     background: #379237;
@@ -150,6 +183,7 @@ input:checked + label {
 }
 
 #boton-mascota {
+    cursor: pointer;
     width: 180px;
     height: 40px;
     border-radius: 20px;
@@ -169,6 +203,7 @@ input:checked + label {
 }
 
 .boton-de-ataque {
+    cursor: pointer;
     width: 80px;
     height: 40px;
     padding: 10px;
@@ -178,18 +213,21 @@ input:checked + label {
 }
 
 #boton-fuego {   
+    cursor: pointer;
     background: #FF8400; 
     font-family: 'Dela Gothic One', cursive;
     color: black;  
 }
 
 #boton-agua {
+    cursor: pointer;
     background: #79DAE8;
     font-family: 'Dela Gothic One', cursive;
     color: black; 
 }
 
 #boton-tierra {
+    cursor: pointer;
     background: #A64B2A;
     font-family: 'Dela Gothic One', cursive;
     color: black;
@@ -210,6 +248,7 @@ input:checked + label {
 }
 
 #boton-continuar {
+    cursor: pointer;
     width: 180px;
     height: 40px;
     border-radius: 20px;
@@ -221,6 +260,7 @@ input:checked + label {
 }
 
 #boton-reiniciar {
+    cursor: pointer;
     width: 180px;
     height: 40px;
     border-radius: 20px;
@@ -271,6 +311,7 @@ input:checked + label {
 }
 
 #ver-mapa button {
+    cursor: pointer;
     width: 80px;
     height: 40px;
     border-radius: 20px;

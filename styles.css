@@ -316,8 +316,8 @@ input:checked + label {
     height: 40px;
     border-radius: 20px;
     background: transparent;
-    border: 2px solid #FFC6AC;
-    color: #FFC6AC;
+    border: 2px solid #EA047E;
+    color: #EA047E;
     font-family: 'Poppins', sans-serif;
     margin: 5px 0;
     user-select: none;
